@@ -11,6 +11,7 @@ class PostsShow extends Component {
 
   render() {
     const { post } = this.props;
+    console.log(post);
 
     if (!post) {
       return <div>Loading...</div>;
@@ -18,7 +19,11 @@ class PostsShow extends Component {
 
     return (
       <div>
-        <h1>Show a single post</h1>
+        <h1>{post.title}</h1>
+        <div className="post-categories-meta">
+          Categories: {post.categories}
+        </div>
+        <div className="post-content">{post.content}</div>
       </div>
     );
   }
