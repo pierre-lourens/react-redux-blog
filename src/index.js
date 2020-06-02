@@ -7,6 +7,7 @@ import promise from "redux-promise";
 
 import reducers from "./reducers";
 import PostsIndex from "./components/posts-index";
+import PostsShow from "./components/posts-show";
 
 import "bootstrap/dist/css/bootstrap.css";
 
@@ -17,7 +18,8 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route path="/" component={PostsIndex} />
+          <Route exact path="/" component={PostsIndex} />
+          <Route path="/posts/:id" component={PostsShow} />
         </Switch>
       </div>
     </BrowserRouter>
